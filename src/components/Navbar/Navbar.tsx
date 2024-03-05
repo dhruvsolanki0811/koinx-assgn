@@ -5,7 +5,7 @@ import "@/components/Navbar/Navbar.css"
 function Navbar() {
   return (
     <>
-      <div className="nav w-full ps-10 pe-10 flex justify-between items-center ">
+      <div className="nav sticky top-0 z-[100] w-full ps-10 pe-10 bg-white flex justify-between items-center ">
         <div className="relative logo-container w-[4rem] h-[4rem] ">
           <Image src={logo} alt="" fill></Image>
         </div>
