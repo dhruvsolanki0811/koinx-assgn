@@ -1,13 +1,11 @@
-'use client'
-import React, { useState } from "react";
+import React from "react";
 import { TiArrowSortedUp } from "react-icons/ti";
 import TradingChart from "../TradingChart/TradingChart";
-import { twMerge } from "tailwind-merge";
-
+import "./OverviewBox.css" 
 function OverviewBox() {
   return (
     <>
-      <div className="overview-box min-h-[max-content] w-full  bg-white py-5 px-9">
+      <div className="overview-box shadow-boxmin-h-[max-content] w-full  bg-white py-5 px-9 rounded-[10px]">
         <div className="overview-header flex items-center flex-nowrap">
           <div className="coin-name-container flex flex-nowrap items-center gap-2">
             <div className="icon icon-btc h-10 w-10 ">

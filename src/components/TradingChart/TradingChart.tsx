@@ -23,8 +23,8 @@ function TradingChart() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "NASDAQ:AAPL",
-          "interval": "D",
+          "symbol": "BTC",
+          "interval": "${graphInterval}",
           "timezone": "Etc/UTC",
           "theme": "light",
           "style": "3",

@@ -9,5 +9,14 @@
 
 }
 
+.blue-box{
+    background-color: #2870ea;
+    background-image: url("https://www.b3multimedia.ie/wp-content/uploads/2021/07/membership-featured-02.png");
+}
 
 
+.shadow-box{
+    box-shadow: 4px 4px 13px 0px rgba(0,0,0,0.15);
+-webkit-box-shadow: 4px 4px 13px 0px rgba(0,0,0,0.15);
+
+}
