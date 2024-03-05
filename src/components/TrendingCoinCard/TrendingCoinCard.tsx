@@ -9,7 +9,7 @@ function TrendingCoinCard() {
   // console.log(data)
   return (
     <>
-      <div className={twMerge(`trendingcoins-card w-full rounded-[10px] shadow-box   bg-white mt-8 px-5 py-4`,isLoading?'h-[13rem]':"min-h-[max-content]")}>
+      <div className={twMerge(`trendingcoins-card max-w-[max-content] min-w-[min-content] rounded-[10px] shadow-box   bg-white mt-8 px-5 py-4`,isLoading?'h-[13rem]':"min-h-[max-content]")}>
         <div className="trending-header text-[20px] font-semibold">
           Trending Coins (24H)
         </div>

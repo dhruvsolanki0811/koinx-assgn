@@ -3,20 +3,30 @@ import logo from "@/assests/blue-card.png";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import TrendingCoinCard from "@/components/TrendingCoinCard/TrendingCoinCard";
+import PerformanceBox from "@/components/PerformanceBox/PerformanceBox";
 
 export default function Home() {
   return (
     <>
       <div className="main-container w-full ">
         <div className="main-content bg-[var(--greyish-bg)] w-full   ps-10 pe-10 pt-4 pb-4">
-          <div className="cytpo-tag text-[13px] flex flex-nowrap gap-2 ">
+          <div className="cytpo-tag text-[14px] flex flex-nowrap gap-2 ">
             <span className="text-[#5E5E5E]">Cryptocurrencies ≫</span>
             Bitcoin
           </div>
           <div className="content-section  flex mt-3">
             <div className="container-box-one h-full  w-[65%] min-w-[max-content] pe-3">
               <OverviewBox></OverviewBox>
-            
+              <div className="tabs-section flex  flex-nowrap items-center gap-3 text-[15px] text-[#a1a1a1] mt-8">
+                <div className="tab text-[#2870ea] border-b-[2px] border-b-solid border-b-[#2870ea]">Overview</div>
+                <div className="tab">Fundamentals</div>
+                <div className="tab">New Insights</div>
+                <div className="tab">Sentiments</div>
+                <div className="tab">Team</div>
+                <div className="tab">Technicals</div>
+                <div className="tab">Tokenomics</div>
+              </div>
+              <PerformanceBox></PerformanceBox>
             </div>
             <div className="container-box-two w-[35%]  ps-3">
               <div className="blue-box shadow-box rounded-[10px] flex flex-col items-center py-6 px-9 gap-3 justify-center  min-h-[max-content] ">
