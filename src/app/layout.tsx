@@ -17,6 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" type="text/css" href="crypto-icons/font.css" />
+        <link rel="stylesheet" type="text/css" href="crypto-icons/styles.css" />
+      </head>
+
       <body className={inter.className}>
         <Navbar></Navbar>
         {children}
