@@ -1,3 +1,4 @@
+'use client'
 import OverviewBox from "@/components/OverviewBox/OverviewBox";
 import logo from "@/assests/blue-card.png";
 import Image from "next/image";
@@ -7,8 +8,11 @@ import PerformanceBox from "@/components/PerformanceBox/PerformanceBox";
 import SentimentBox from "@/components/SentimentBox/SentimentBox";
 import AboutBox from "@/components/AboutBox/AboutBox";
 import TokenomicBox from "@/components/TokenomicsBox/TokenomicBox";
+import { useFetchCoin } from "@/hooks/useFetchCoinData";
+import TeamBox from "@/components/TeamBox/TeamBox";
 
 export default function Home() {
+  const {data}=useFetchCoin()
   return (
     <>
       <div className="main-container w-full ">
@@ -33,8 +37,9 @@ export default function Home() {
               <SentimentBox></SentimentBox>
               <AboutBox></AboutBox>
               <TokenomicBox></TokenomicBox>
+              <TeamBox></TeamBox>
             </div>
-            <div className="container-box-two  col-span-1 md:col-span-2   ">
+            <div className="container-box-two  col-span-1 md:col-span-2">
               <div className="blue-box shadow-box   rounded-[10px] flex flex-col items-center py-6 px-9 gap-3 justify-center  min-h-[max-content] ">
                 <div className="offer text-[23px] text-white font-semibold   text-center	">
                   Get Started With KoinX for Free
