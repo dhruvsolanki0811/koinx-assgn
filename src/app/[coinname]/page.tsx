@@ -5,6 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import TrendingCoinCard from "@/components/TrendingCoinCard/TrendingCoinCard";
 import PerformanceBox from "@/components/PerformanceBox/PerformanceBox";
 import SentimentBox from "@/components/SentimentBox/SentimentBox";
+import AboutBox from "@/components/AboutBox/AboutBox";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
               </div>
               <PerformanceBox></PerformanceBox>
               <SentimentBox></SentimentBox>
+              <AboutBox></AboutBox>
             </div>
             <div className="container-box-two w-[35vw]  ps-3">
               <div className="blue-box shadow-box rounded-[10px] flex flex-col items-center py-6 px-9 gap-3 justify-center  min-h-[max-content] ">

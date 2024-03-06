@@ -14,7 +14,7 @@ function PerformanceBox() {
             <FaInfoCircle className="text-[#a1a1a1]"></FaInfoCircle>
           </span>
         </div>
-        <div className="insight-container w-full mt-3 grid grid-cols-2 gap-[6rem]">
+        <div className="insight-container w-full  grid grid-cols-2 gap-[6rem]">
           <div className="insight-1  h-[10rem] grid grid-cols-2 grid-rows-4">
             <div className="tag flex justify-start border-b-[2px] items-end text-[#768396]">
               Okay

@@ -9,15 +9,15 @@ function TrendingCoinCard() {
   // console.log(data)
   return (
     <>
-      <div className={twMerge(`trendingcoins-card max-w-[max-content] min-w-[min-content] rounded-[10px] shadow-box   bg-white mt-8 px-5 py-4`)}>
+      <div className={twMerge(`trendingcoins-card   rounded-[10px] shadow-box   bg-white mt-8 px-5 py-4`)}>
         <div className="trending-header text-[20px] font-semibold">
           Trending Coins (24H)
         </div>
         <div className="coins flex flex-col gap-6 mt-4 flex-nowrap">
           {isLoading?
-          [1,2,3].map(()=>
-          <div className="coin-container w-[30vw] grid  grid-cols-6 ">
-          <div className="coins-name-container  text-[14px] flex gap-[6px] items-center col-span-5	">
+          [1,2,3].map((_,i)=>
+          <div key={i} className="coin-container w-[30vw] grid  grid-cols-6 ">
+          <div className="coins-name-container  text-[14px] flex gap-[6px] items-center ">
             <div className="icon-logo w-[2.3rem] h-[2rem] rounded-[100%] overflow-hidden ">
               <div
                 className="h-full w-full object-contain"
@@ -29,16 +29,16 @@ function TrendingCoinCard() {
           </div>
           <div className="coin-name">
             
-              <div className="price-change  bg-[#737b91] min-w-[max-content]  text-[13px]  text-[#0FBA83] bg-[#EBF9F4] p-[6px] rounded-[6px]  flex flex-nowrap items-center justify-center gap-1">
+              <div className="price-change  bg-[#737b91]   text-[13px]  text-[#0FBA83] bg-[#EBF9F4] p-[6px] rounded-[6px]  flex flex-nowrap items-center justify-center gap-1">
                 
               </div>
             
           </div>
         </div>)
           : coins ? (
-            coins.slice(0, 3).map((coin) => (
-              <div className="coin-container  grid w-[30vw]  grid-cols-6 ">
-                <div className="coins-name-container text-[14px] flex gap-[6px] items-center col-span-5	">
+            coins.slice(0, 3).map((coin,i) => (
+              <div key={i} className="coin-container   w-full flex  justify-between  ">
+                <div className="coins-name-container text-[14px] flex gap-[6px] items-center  flex-wrap	">
                   <div className="icon-logo w-[2.3rem] h-[2rem] rounded-[100%] overflow-hidden ">
                     <img
                       className="h-full w-full object-contain"
