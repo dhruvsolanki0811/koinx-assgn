@@ -117,7 +117,7 @@ function SentimentBox() {
             <div className="flex h-[38px] items-center gap-4">
               <div className="type">Buy</div>
               <div className="progressline-container flex items-center gap-[10px] flex-nowrap">
-                <div className="progress-line max-w-[28.71rem] w-[21.81rem] bg-[#00B386] h-[8px]"></div>
+                {/* <div className="progress-line max-w-[28.71rem] w-[21.81rem] bg-[#00B386] h-[8px]"></div> */}
                 <div className="progress-text">76%</div>
               </div>
             </div>

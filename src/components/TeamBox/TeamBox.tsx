@@ -13,7 +13,7 @@ function TeamBox() {
           nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium
           quam. Facilisis purus convallis quam augue.
         </p>
-        <div className="about-member w-full flex bg-[#E8F4FD] mt-4 rounded-[10px]">
+        <div className="about-member w-full flex bg-[#E8F4FD]  rounded-[10px]">
           <div className="profile-wrapper flex flex-col gap-2 items-center justify-center p-3">
             <div className="relative image-container w-[5.7rem] h-[5.7rem] ">
               <Image
@@ -69,7 +69,7 @@ function TeamBox() {
             </div>
             <div className="name text-[14px] font-medium">John Smith</div>
           </div>
-          <div className="about-wrapper flex items-center ">
+          <div className="about-wrapper flex">
             <p className="answer  text-[12px] font-medium text-[#3E424A] mt-[10px] p-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
               minima ea, corporis aspernatur magnam ex doloremque accusantium

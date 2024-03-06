@@ -1,12 +1,11 @@
 "use client";
-import { useFetchTrendingCoin } from "@/hooks/useTrendingCoins";
+import { useFetchTrendingCoin } from "@/hooks/useTrending";
 import React from "react";
 import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
 import { twMerge } from "tailwind-merge";
 
 function TrendingCoinCard() {
-  const { data: coins, isError, isLoading } = useFetchTrendingCoin();
-  // console.log(data)
+  const { data: coins, isLoading } = useFetchTrendingCoin();
   return (
     <>
       <div className={twMerge(`trendingcoins-card   rounded-[10px] shadow-box w-full   bg-white mt-8 px-5 py-4`)}>
