@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import TrendingCoinCard from "@/components/TrendingCoinCard/TrendingCoinCard";
 import PerformanceBox from "@/components/PerformanceBox/PerformanceBox";
+import SentimentBox from "@/components/SentimentBox/SentimentBox";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
             Bitcoin
           </div>
           <div className="content-section  flex mt-3">
-            <div className="container-box-one h-full  w-[65%] min-w-[max-content] pe-3">
+            <div className="container-box-one h-full  w-[65vw] min-w-[max-content] pe-3">
               <OverviewBox></OverviewBox>
               <div className="tabs-section flex  flex-nowrap items-center gap-3 text-[15px] text-[#a1a1a1] mt-8">
                 <div className="tab text-[#2870ea] border-b-[2px] border-b-solid border-b-[#2870ea]">Overview</div>
@@ -27,8 +28,9 @@ export default function Home() {
                 <div className="tab">Tokenomics</div>
               </div>
               <PerformanceBox></PerformanceBox>
+              <SentimentBox></SentimentBox>
             </div>
-            <div className="container-box-two w-[35%]  ps-3">
+            <div className="container-box-two w-[35vw]  ps-3">
               <div className="blue-box shadow-box rounded-[10px] flex flex-col items-center py-6 px-9 gap-3 justify-center  min-h-[max-content] ">
                 <div className="offer text-[23px] text-white font-semibold   text-center	">
                   Get Started With KoinX for Free

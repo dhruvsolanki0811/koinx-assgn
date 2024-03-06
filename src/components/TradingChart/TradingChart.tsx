@@ -54,7 +54,7 @@ function TradingChart() {
         <div className="chart-tag text-[16px] font-bold">
           Bitcoin Price Chart (USD)
         </div>
-        <div className="unit-times-duration flex text-[13px] text-[#5A5A5A] font-medium gap-3">
+        <div className="unit-times-duration flex text-[13px] text-[#768396] font-medium gap-3">
           {["1H", "24H", "7D", "1M", "3M", "6M", "1Y"].map(
             (unit, key) => (
               <div

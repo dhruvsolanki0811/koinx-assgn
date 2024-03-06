@@ -5,14 +5,18 @@
 :root {
  margin: 0;
  padding: 0;
- --greyish-bg: #f0f5fa;
-
+ --greyish-bg: #EFF2F5 ;
 }
-
-.blue-box{
+.blue-box {
+    background: linear-gradient(81.62deg, #2870EA 8.72%, #1B4AEF 85.01%);
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(81.62deg, #2870EA 8.72%, #1B4AEF 85.01%);
+    /* For Mozilla Firefox */
+    background: -moz-linear-gradient(81.62deg, #2870EA 8.72%, #1B4AEF 85.01%);
+}
+/* .blue-box{
     background-color: #2870ea;
-    background-image: url("https://www.b3multimedia.ie/wp-content/uploads/2021/07/membership-featured-02.png");
-}
+} */
 
 
 .shadow-box{

@@ -14,7 +14,7 @@ function Navbar() {
           <div className="nav-item flex items-center">Free Tools</div>
           <div className="nav-item flex items-center">Resource Center</div>
           <div className="nav-item flex items-center">
-            <div className="btn-container bg-[#2870ea] text-white p-[6px] rounded-[6px]">Get Started</div>
+            <div className="btn-container blue-box text-white p-[6px] rounded-[6px]">Get Started</div>
           </div>
         </div>
       </div>
