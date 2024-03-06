@@ -35,7 +35,7 @@ function SentimentBox() {
   };
   return (
     <>
-      <div className="overview-box mt-8 shadow-box min-h-[max-content] w-full  bg-white py-5 px-9 rounded-[10px]">
+      <div className="overview-box mt-8 shadow-box w-full min-h-[max-content]  bg-white py-5 px-9 rounded-[10px]">
         <div className="overview-header text-[20px] font-semibold">
           Sentiments
         </div>
@@ -62,7 +62,7 @@ function SentimentBox() {
 
           <div
             ref={showsRef}
-            className="carousel-container w-[55vw] mt-4 flex gap-2 overflow-x-auto overflow-y-hidden no-scrollbar"
+            className="carousel-container  mt-4 flex gap-2 overflow-x-auto overflow-y-hidden no-scrollbar"
           >
             {[1, 2, 3, 4, 5].map((_, i) => (
               <div
@@ -117,21 +117,21 @@ function SentimentBox() {
             <div className="flex h-[38px] items-center gap-4">
               <div className="type">Buy</div>
               <div className="progressline-container flex items-center gap-[10px] flex-nowrap">
-                <div className="progress-line max-w-[459.3421px] w-[349.14px] bg-[#00B386] h-[8px]"></div>
+                <div className="progress-line max-w-[28.71rem] w-[21.81rem] bg-[#00B386] h-[8px]"></div>
                 <div className="progress-text">76%</div>
               </div>
             </div>
             <div className="flex h-[38px] items-center gap-4">
               <div className="type">Hold</div>
               <div className="progressline-container flex items-center gap-[10px] flex-nowrap">
-                <div className="progress-line max-w-[459.3421px] w-[36.72px] bg-[#C7C8CE] h-[8px]"></div>
+                <div className="progress-line max-w-[28.71rem] w-[2.295rem] bg-[#C7C8CE] h-[8px]"></div>
                 <div className="progress-text">8%</div>
               </div>
             </div>
             <div className="flex h-[38px] items-center gap-4">
               <div className="type">Sell</div>
               <div className="progressline-container flex items-center gap-[10px] flex-nowrap">
-                <div className="progress-line max-w-[459.3421px] w-[73.44px] bg-[#F7324C] h-[8px]"></div>
+                <div className="progress-line max-w-[28.71rem] w-[4.59rem] bg-[#F7324C] h-[8px]"></div>
                 <div className="progress-text">16%</div>
               </div>
             </div>

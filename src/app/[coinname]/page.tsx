@@ -6,6 +6,7 @@ import TrendingCoinCard from "@/components/TrendingCoinCard/TrendingCoinCard";
 import PerformanceBox from "@/components/PerformanceBox/PerformanceBox";
 import SentimentBox from "@/components/SentimentBox/SentimentBox";
 import AboutBox from "@/components/AboutBox/AboutBox";
+import TokenomicBox from "@/components/TokenomicsBox/TokenomicBox";
 
 export default function Home() {
   return (
@@ -16,8 +17,8 @@ export default function Home() {
             <span className="text-[#5E5E5E]">Cryptocurrencies ≫</span>
             Bitcoin
           </div>
-          <div className="content-section  flex mt-3">
-            <div className="container-box-one h-full  w-[65vw] min-w-[max-content] pe-3">
+          <div className="content-section grid grid-cols-1 md:grid-cols-6  gap-6 mt-3">
+            <div className="container-box-one h-full col-span-1 md:col-span-4">
               <OverviewBox></OverviewBox>
               <div className="tabs-section flex  flex-nowrap items-center gap-3 text-[15px] text-[#a1a1a1] mt-8">
                 <div className="tab text-[#2870ea] border-b-[2px] border-b-solid border-b-[#2870ea]">Overview</div>
@@ -31,9 +32,10 @@ export default function Home() {
               <PerformanceBox></PerformanceBox>
               <SentimentBox></SentimentBox>
               <AboutBox></AboutBox>
+              <TokenomicBox></TokenomicBox>
             </div>
-            <div className="container-box-two w-[35vw]  ps-3">
-              <div className="blue-box shadow-box rounded-[10px] flex flex-col items-center py-6 px-9 gap-3 justify-center  min-h-[max-content] ">
+            <div className="container-box-two  col-span-1 md:col-span-2   ">
+              <div className="blue-box shadow-box   rounded-[10px] flex flex-col items-center py-6 px-9 gap-3 justify-center  min-h-[max-content] ">
                 <div className="offer text-[23px] text-white font-semibold   text-center	">
                   Get Started With KoinX for Free
                 </div>
