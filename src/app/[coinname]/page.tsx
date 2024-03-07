@@ -69,7 +69,7 @@ export default function Home() {
     <>
       <div className="main-container w-full ">
         <div className="main-content bg-[var(--greyish-bg)] w-full  max-[500px]:px-[0.8rem] ps-10 pe-10 pt-4 pb-4">
-          <div className="cytpo-tag text-[14px] flex flex-nowrap gap-2 cursor-pointer">
+          <div className="cytpo-tag text-[14px] flex flex-nowrap gap-2 cursor-default">
             <span className="text-[#5E5E5E] ">Cryptocurrencies ≫</span>
             {crypto?.name}
           </div>
