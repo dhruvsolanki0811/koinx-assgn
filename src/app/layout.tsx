@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/png" href="/logo.svg " />
         <link rel="stylesheet" type="text/css" href="crypto-icons/font.css" />
         <link rel="stylesheet" type="text/css" href="crypto-icons/styles.css" />
       </head>

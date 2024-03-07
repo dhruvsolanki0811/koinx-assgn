@@ -109,30 +109,36 @@ function SentimentBox() {
             <FaInfoCircle className="text-[#a1a1a1]"></FaInfoCircle>
           </span>
         </div>
-        <div className="fundamentals-content flex flex-nowrap mt-4 gap-[40px]">
-          <div className="percentage-container flex justify-center items-center bg-[#EBF9F4] text-[30px] text-[#0FBA83] rounded-full  h-[120px] w-[120px]">
+        <div className="grid grid-cols-10 gap-10 mt-3 md:gap-5  h-[8rem] items-center ">
+          <div className="col-span-3 h-[8rem] md:h-[8rem]  md:col-span-2  flex items-center justify-center bg-[#EBF9F4] rounded-full w-full text-[#0FBA83] text-3xl">
             76%
           </div>
-          <div className="progressbar-container grid grid-rows-3 gap-3 text-[#7C7E8C] text-[15px]">
-            <div className="flex h-[38px] items-center gap-4">
-              <div className="type">Buy</div>
-              <div className="progressline-container flex items-center gap-[10px] flex-nowrap">
-                {/* <div className="progress-line max-w-[28.71rem] w-[21.81rem] bg-[#00B386] h-[8px]"></div> */}
-                <div className="progress-text">76%</div>
+          <div className="col-span-6 md:col-span-7  h-[5rem] md:h-[8rem] flex flex-col justify-center gap-5">
+            <div className="grid grid-cols-10 ">
+              <div className="col-span-2 flex justify-end">
+                <div className="mr-2 text-[#7C7E8C]">Buy</div>
+              </div>
+              <div className="col-span-8 flex gap-1">
+                <div className="w-[76%] mt-2 h-2 bg-[#00B386]"></div>
+                <div>76%</div>
               </div>
             </div>
-            <div className="flex h-[38px] items-center gap-4">
-              <div className="type">Hold</div>
-              <div className="progressline-container flex items-center gap-[10px] flex-nowrap">
-                <div className="progress-line max-w-[28.71rem] w-[2.295rem] bg-[#C7C8CE] h-[8px]"></div>
-                <div className="progress-text">8%</div>
+            <div className="grid grid-cols-10 items-center">
+              <div className="col-span-2 flex justify-end">
+                <div className="mr-2 text-[#7C7E8C]">Hold</div>
+              </div>
+              <div className="col-span-8 flex gap-1">
+                <div className="w-[8%] mt-2 h-2 bg-[#C7C8CE]"></div>
+                <div>8%</div>
               </div>
             </div>
-            <div className="flex h-[38px] items-center gap-4">
-              <div className="type">Sell</div>
-              <div className="progressline-container flex items-center gap-[10px] flex-nowrap">
-                <div className="progress-line max-w-[28.71rem] w-[4.59rem] bg-[#F7324C] h-[8px]"></div>
-                <div className="progress-text">16%</div>
+            <div className="grid grid-cols-10 items-center">
+              <div className="col-span-2 flex justify-end">
+                <div className="mr-2 text-[#7C7E8C]">Sell</div>
+              </div>
+              <div className="col-span-8 flex gap-1">
+                <div className="w-[16%] mt-2 h-2 bg-[#F7324C]"></div>
+                <div>16%</div>
               </div>
             </div>
           </div>

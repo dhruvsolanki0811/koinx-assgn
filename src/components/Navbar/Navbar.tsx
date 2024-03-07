@@ -8,12 +8,14 @@ import { GoTools } from "react-icons/go";
 import { LiaPaperclipSolid } from "react-icons/lia";
 import { BsRocketTakeoff } from "react-icons/bs";
 import { FaTools } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 function Navbar() {
+  const router=useRouter()
   const [dialogBoxOpen, setDialogBoxOpen] = useState(false);
   return (
     <>
       <div className="nav sticky top-0 z-[100] w-full max-[500px]:px-[0.8rem] ps-10 pe-10 bg-white flex justify-between items-center ">
-        <div className="relative logo-container w-[4rem] cursor-pointer h-[4rem] ">
+        <div onClick={()=>router.push('.bitcoin')} className="relative logo-container w-[4rem] cursor-pointer h-[4rem] ">
           <Image src={logo} alt="" fill></Image>
         </div>
         <div className="nav-items-container flex gap-4 font-bold text-[14px] max-sm:hidden">
