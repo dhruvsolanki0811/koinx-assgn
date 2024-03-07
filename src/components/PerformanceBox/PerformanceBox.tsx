@@ -67,7 +67,7 @@ function PerformanceBox({ crypto }: { crypto?: CryptoData }) {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-10 gap-4 w-full mt-6">
+      <div className="grid grid-cols-10 gap-4 w-full">
         <div className="col-span-2 flex justify-center">
           <div className="space-y-2">
             <p className="text-sm text-[#44475B]">52W Low</p>
