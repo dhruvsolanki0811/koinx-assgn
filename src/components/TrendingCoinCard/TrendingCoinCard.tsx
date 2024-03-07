@@ -12,7 +12,7 @@ function TrendingCoinCard() {
     <>
       <div
         className={twMerge(
-          `trendingcoins-card   rounded-[10px] shadow-box w-full   bg-white mt-8 px-5 py-4`
+          `trendingcoins-card  cursor-default rounded-[10px] shadow-box w-full   bg-white mt-8 px-5 py-4`
         )}
       >
         <div className="trending-header text-[20px] font-semibold">

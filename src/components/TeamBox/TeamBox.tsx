@@ -6,7 +6,7 @@ import Image from "next/image";
 function TeamBox() {
   return (
     <>
-      <div className="overview-box mt-8 shadow-box w-full min-h-[max-content]   bg-white py-5 px-9 rounded-[10px]">
+      <div className="overview-box cursor-default mt-8 shadow-box w-full min-h-[max-content]   bg-white py-5 px-9 rounded-[10px]">
         <div className="overview-header text-[20px] font-semibold">Team</div>
         <p className="answer  text-[14px] font-medium text-[#3E424A] mt-[10px] ">
           Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu

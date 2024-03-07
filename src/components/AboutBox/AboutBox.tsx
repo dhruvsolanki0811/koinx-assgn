@@ -9,7 +9,7 @@ import { CryptoData } from "@/types/types";
 function AboutBox({ crypto }: { crypto?: CryptoData }) {
   return (
     <>
-      <div className="about-box mt-8 shadow-box min-h-[max-content]  bg-white py-5 px-9 rounded-[10px]">
+      <div className="about-box cursor-default mt-8 shadow-box min-h-[max-content]  bg-white py-5 px-9 rounded-[10px]">
         <div className="overview-header text-[20px] font-semibold">
           About {crypto?.name}
         </div>
@@ -70,7 +70,7 @@ function AboutBox({ crypto }: { crypto?: CryptoData }) {
                 <div className="tag text-[20px] font-bold text-white">
                   Calculate Your Profits
                 </div>
-                <div className="btn-container bg-white max-w-[max-content] text-black text-[12px] font-semibold p-2 px-2 rounded-[6px] flex items-center">
+                <div className="btn-container cursor-pointer bg-white max-w-[max-content] text-black text-[12px] font-semibold p-2 px-2 rounded-[6px] flex items-center">
                   Check Now
                   <FaArrowRightLong className="ms-3 font-bold" />
                 </div>
@@ -88,7 +88,7 @@ function AboutBox({ crypto }: { crypto?: CryptoData }) {
                 <div className="tag text-[20px] font-bold text-white">
                   Calculate Your Profits
                 </div>
-                <div className="btn-container bg-white max-w-[max-content] text-black text-[12px] font-semibold p-2 px-2 rounded-[6px] flex items-center">
+                <div className="btn-container cursor-pointer bg-white max-w-[max-content] text-black text-[12px] font-semibold p-2 px-2 rounded-[6px] flex items-center">
                   Check Now
                   <FaArrowRightLong className="ms-3 font-bold" />
                 </div>
