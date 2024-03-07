@@ -52,7 +52,7 @@ function TradingChart({ symbol }: { symbol?: string }) {
 
   return (
     <>
-      <div className="change-btn-container w-full flex justify-between flex-nowrap">
+      <div className="change-btn-container w-full flex justify-between flex-nowrap overflow-hidden">
         <div className="chart-tag text-[16px] font-bold">
           Bitcoin Price Chart (USD)
         </div>

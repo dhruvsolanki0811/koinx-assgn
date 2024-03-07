@@ -109,7 +109,7 @@ function SentimentBox() {
             <FaInfoCircle className="text-[#a1a1a1]"></FaInfoCircle>
           </span>
         </div>
-        <div className="grid grid-cols-10 gap-10 mt-3 md:gap-5  h-[8rem] items-center ">
+        <div className="grid grid-cols-10 gap-10 mt-3 md:gap-5  h-[8rem] items-center overflow-hidden">
           <div className="col-span-3 h-[8rem] md:h-[8rem]  md:col-span-2  flex items-center justify-center bg-[#EBF9F4] rounded-full w-full text-[#0FBA83] text-3xl">
             76%
           </div>
