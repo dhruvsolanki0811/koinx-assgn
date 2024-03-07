@@ -4,23 +4,24 @@ import Image from "next/image";
 import card1 from "@/assests/card1.jpg";
 import card2 from "@/assests/card2.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { CryptoData } from "@/types/types";
 
-function AboutBox() {
+function AboutBox({ crypto }: { crypto?: CryptoData }) {
   return (
     <>
       <div className="about-box mt-8 shadow-box min-h-[max-content]  bg-white py-5 px-9 rounded-[10px]">
         <div className="overview-header text-[20px] font-semibold">
-          About Bitcoin
+          About {crypto?.name}
         </div>
         <div className="question text-[17px] font-bold mt-4">
-          What is Bitcoin?
+          What is {crypto?.name}?
         </div>
         <p className="answer  text-[14px] font-medium text-[#3E424A] mt-[10px] ">
-          Bitcoin’s price today is US$16,951.82, with a 24-hour trading volume
-          of $19.14 B. BTC is +0.36% in the last 24 hours. It is currently
-          -7.70% from its 7-day all-time high of $18,366.66, and 3.40% from its
-          7-day all-time low of $16,394.75. BTC has a circulating supply of
-          19.24 M BTC and a max supply of 21 M BTC.
+          {crypto?.name}’s price today is US$16,951.82, with a 24-hour trading
+          volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is
+          currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40%
+          from its 7-day all-time low of $16,394.75. BTC has a circulating
+          supply of 19.24 M BTC and a max supply of 21 M BTC.
         </p>
         <div className="bg-[#C9CFDD] h-[1px] mt-[10px]" />
         <div className="question text-[17px] font-bold mt-[10px]">
@@ -54,10 +55,10 @@ function AboutBox() {
         <div className="bg-[#C9CFDD] h-[1px] mt-4" />
         <div className="section-two-container mt-[10px]">
           <div className="overview-header text-[20px] font-semibold">
-            Already Holding Bitcoin?
+            Already Holding {crypto?.name}?
           </div>
-          <div className="cards-container grid grid-cols-2 h-[151px] gap-[16px] mt-[10px]">
-            <div className="card rounded-[10px] card1 flex gap-2 ">
+          <div className="cards-container grid max-sm:grid-cols-1 max-sm:grid-rows-2 lg:grid-cols-2  lg:h-[151px] max-md:grid-cols-2 gap-[16px] mt-[10px] ">
+            <div className="card rounded-[10px] card1 flex   gap-2 ">
               <div className="img-container flex justify-center p-2 items-center overflow-none">
                 <Image
                   src={card1}
@@ -95,7 +96,6 @@ function AboutBox() {
             </div>
           </div>
           <div className="bg-[#C9CFDD] h-[0.7px] mt-4" />
-          {/* Additional content */}
         </div>
       </div>
     </>

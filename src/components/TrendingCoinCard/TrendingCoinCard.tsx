@@ -1,42 +1,48 @@
 "use client";
 import { useFetchTrendingCoin } from "@/hooks/useTrending";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { TiArrowSortedUp, TiArrowSortedDown } from "react-icons/ti";
 import { twMerge } from "tailwind-merge";
 
 function TrendingCoinCard() {
   const { data: coins, isLoading } = useFetchTrendingCoin();
+  const router = useRouter();
   return (
     <>
-      <div className={twMerge(`trendingcoins-card   rounded-[10px] shadow-box w-full   bg-white mt-8 px-5 py-4`)}>
+      <div
+        className={twMerge(
+          `trendingcoins-card   rounded-[10px] shadow-box w-full   bg-white mt-8 px-5 py-4`
+        )}
+      >
         <div className="trending-header text-[20px] font-semibold">
           Trending Coins (24H)
         </div>
         <div className="coins flex flex-col gap-6 mt-4 flex-nowrap">
-          {isLoading?
-          [1,2,3].map((_,i)=>
-          <div key={i} className="coin-container w-[30vw] grid  grid-cols-6 ">
-          <div className="coins-name-container  text-[14px] flex gap-[6px] items-center ">
-            <div className="icon-logo w-[2.3rem] h-[2rem] rounded-[100%] overflow-hidden ">
+          {isLoading ? (
+            [1, 2, 3].map((_, i) => (
               <div
-                className="h-full w-full object-contain"
-                
-              />
-            </div>
-            <div className="coin-name text-elipsis font-medium  overflow-hidden truncate">
-            </div>
-          </div>
-          <div className="coin-name">
-            
-              <div className="price-change  bg-[#737b91]   text-[13px]  text-[#0FBA83] bg-[#EBF9F4] p-[6px] rounded-[6px]  flex flex-nowrap items-center justify-center gap-1">
-                
+                key={i}
+                className="coin-container w-[30vw] grid  grid-cols-6 "
+              >
+                <div className="coins-name-container  text-[14px] flex gap-[6px] items-center ">
+                  <div className="icon-logo w-[2.3rem] h-[2rem] rounded-[100%] overflow-hidden ">
+                    <div className="h-full w-full object-contain" />
+                  </div>
+                  <div className="coin-name text-elipsis font-medium  overflow-hidden truncate"></div>
+                </div>
+                <div className="coin-name">
+                  <div className="price-change  bg-[#737b91]   text-[13px]  text-[#0FBA83] bg-[#EBF9F4] p-[6px] rounded-[6px]  flex flex-nowrap items-center justify-center gap-1"></div>
+                </div>
               </div>
-            
-          </div>
-        </div>)
-          : coins ? (
-            coins.slice(0, 3).map((coin,i) => (
-              <div key={i} className="coin-container   w-full flex  justify-between  ">
+            ))
+          ) : coins ? (
+            coins.slice(0, 3).map((coin, i) => (
+              <div
+                key={i}
+                onClick={() => router.push(`/${coin.item.id}`)}
+                className="coin-container cursor-pointer  w-full flex md:flex-wrap  justify-between  "
+              >
                 <div className="coins-name-container text-[14px] flex gap-[6px] items-center  flex-wrap	">
                   <div className="icon-logo w-[2.3rem] h-[2rem] rounded-[100%] overflow-hidden ">
                     <img

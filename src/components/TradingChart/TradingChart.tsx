@@ -2,12 +2,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-function TradingChart() {
+function TradingChart({ symbol }: { symbol?: string }) {
   const [graphInterval, setGraphInterval] = useState("24H");
 
   const container = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (container.current) {
+    if (container.current && symbol) {
+      console.log(symbol);
       const existingScript = container.current.querySelector("script");
       if (existingScript) {
         existingScript.remove();
@@ -23,7 +24,7 @@ function TradingChart() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "BTC",
+          "symbol": "${symbol}USD",
           "interval": "${graphInterval}",
           "timezone": "Etc/UTC",
           "theme": "light",
@@ -37,8 +38,9 @@ function TradingChart() {
           "hide_volume": true,
           "support_host": "https://www.tradingview.com"
         }`;
-    container.current?.appendChild(script);
-
+    if (symbol) {
+      container.current?.appendChild(script);
+    }
     // Clean up function to remove the script when the component unmounts
     return () => {
       script.remove();
@@ -46,7 +48,7 @@ function TradingChart() {
         container.current.innerHTML = "";
       }
     };
-  }, [graphInterval]);
+  }, [graphInterval, symbol]);
 
   return (
     <>
@@ -55,20 +57,18 @@ function TradingChart() {
           Bitcoin Price Chart (USD)
         </div>
         <div className="unit-times-duration flex text-[13px] text-[#768396] font-medium gap-3">
-          {["1H", "24H", "7D", "1M", "3M", "6M", "1Y"].map(
-            (unit, key) => (
-              <div
-                key={key}
-                onClick={() => setGraphInterval(unit)}
-                className={twMerge(
-                  `time-duration cursor-pointer`,
-                  graphInterval == unit && ` text-[#2870ea]`
-                )}
-              >
-                {unit}
-              </div>
-            )
-          )}
+          {["1H", "24H", "7D", "1M", "3M", "6M", "1Y"].map((unit, key) => (
+            <div
+              key={key}
+              onClick={() => setGraphInterval(unit)}
+              className={twMerge(
+                `time-duration cursor-pointer`,
+                graphInterval == unit && ` text-[#2870ea]`
+              )}
+            >
+              {unit}
+            </div>
+          ))}
         </div>
       </div>
       <div className="trading-container h-[19rem] w-full mt-10">

@@ -1,26 +1,48 @@
 import { useFetchTrendingCoin } from "@/hooks/useTrending";
 import { Coin } from "@/types/types";
+import { useRouter } from "next/navigation";
 import React, { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { twMerge } from "tailwind-merge";
 
 function YouMayLikeBox() {
+  const router = useRouter();
   const { data: coins, isError, isLoading } = useFetchTrendingCoin();
-  const showsRef = useRef<HTMLDivElement>(null);
-  const scrollToDirection = (direction: "left" | "right") => {
-    if (!showsRef.current) return;
+  const carouseloneRef = useRef<HTMLDivElement>(null);
+  //   const showsRef = useRef<HTMLDivElement>(null);
+  const scrollToDirectionCarouselOne = (direction: "left" | "right") => {
+    if (!carouseloneRef.current) return;
 
-    const { scrollLeft, clientWidth } = showsRef.current;
+    const { scrollLeft, clientWidth } = carouseloneRef.current;
     const offset =
       direction === "left"
         ? scrollLeft - clientWidth
         : scrollLeft + clientWidth;
 
-    showsRef.current.scrollTo({ left: offset, behavior: "smooth" });
+    carouseloneRef.current.scrollTo({ left: offset, behavior: "smooth" });
 
     if (scrollLeft === 0 && direction === "left") {
-      showsRef.current.scrollTo({
-        left: showsRef.current.scrollWidth,
+      carouseloneRef.current.scrollTo({
+        left: carouseloneRef.current.scrollWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const carouseltwoRef = useRef<HTMLDivElement>(null);
+  const scrollToDirectionCarouselTwo = (direction: "left" | "right") => {
+    if (!carouseltwoRef.current) return;
+
+    const { scrollLeft, clientWidth } = carouseltwoRef.current;
+    const offset =
+      direction === "left"
+        ? scrollLeft - clientWidth
+        : scrollLeft + clientWidth;
+
+    carouseltwoRef.current.scrollTo({ left: offset, behavior: "smooth" });
+
+    if (scrollLeft === 0 && direction === "left") {
+      carouseltwoRef.current.scrollTo({
+        left: carouseltwoRef.current.scrollWidth,
         behavior: "smooth",
       });
     }
@@ -34,29 +56,30 @@ function YouMayLikeBox() {
         <div className="nft-carousel">
           <div className="group relative   flex items-center">
             <div
-              onClick={() => scrollToDirection("left")}
+              onClick={() => scrollToDirectionCarouselOne("left")}
               className="btn-scroll-right border-[2px] border-solid border-[#E3E3E3] mx-2 flex items-center justify-center rounded-full bg-white  cursor-pointer  font-bold text-xl h-[30px] w-[30px]  absolute z-[50] "
             >
               <FaChevronLeft className="text-[15px]"></FaChevronLeft>
             </div>
 
             <div
-              onClick={() => scrollToDirection("right")}
+              onClick={() => scrollToDirectionCarouselOne("right")}
               className="btn-scroll-right mx-2 flex border-[2px] border-solid border-[#E3E3E3] items-center justify-center rounded-full bg-white  cursor-pointer  font-bold text-xl h-[30px] w-[30px]  absolute z-[50] right-0"
             >
               <FaChevronRight className="text-[15px]"></FaChevronRight>
             </div>
 
             <div
-              ref={showsRef}
+              ref={carouseloneRef}
               className="carousel-container  mt-4 flex gap-2 overflow-x-auto overflow-y-hidden no-scrollbar"
             >
               {coins &&
                 coins.map((coin: Coin, i: number) => (
                   <div
                     key={i}
+                    onClick={() => router.push(`/${coin.item.id}`)}
                     className={
-                      "carousel-card-container px-4 border-[1px] border-solid border-[#E3E3E3] py-3 max-w-[26rem] rounded-[10px] min-w-[250px] h-[160px] flex flex-col flex-nowrap gap-2 "
+                      "carousel-card-container cursor-pointer px-4 border-[1px] border-solid border-[#E3E3E3] py-3 max-w-[26rem] rounded-[10px] min-w-[250px] h-[160px] flex flex-col flex-nowrap gap-2 "
                     }
                   >
                     <div className="icon-container ">
@@ -92,29 +115,30 @@ function YouMayLikeBox() {
         <div className="nft-carousel">
           <div className="group relative   flex items-center">
             <div
-              onClick={() => scrollToDirection("left")}
+              onClick={() => scrollToDirectionCarouselTwo("left")}
               className="btn-scroll-right border-[2px] border-solid border-[#E3E3E3] mx-2 flex items-center justify-center rounded-full bg-white  cursor-pointer  font-bold text-xl h-[30px] w-[30px]  absolute z-[50] "
             >
               <FaChevronLeft className="text-[15px]"></FaChevronLeft>
             </div>
 
             <div
-              onClick={() => scrollToDirection("right")}
+              onClick={() => scrollToDirectionCarouselTwo("right")}
               className="btn-scroll-right mx-2 flex border-[2px] border-solid border-[#E3E3E3] items-center justify-center rounded-full bg-white  cursor-pointer  font-bold text-xl h-[30px] w-[30px]  absolute z-[50] right-0"
             >
               <FaChevronRight className="text-[15px]"></FaChevronRight>
             </div>
 
             <div
-              ref={showsRef}
+              ref={carouseltwoRef}
               className="carousel-container  mt-4 flex gap-2 overflow-x-auto overflow-y-hidden no-scrollbar"
             >
               {coins &&
                 coins.map((coin: Coin, i: number) => (
                   <div
                     key={i}
+                    onClick={() => router.push(`/${coin.item.id}`)}
                     className={
-                      "carousel-card-container px-4 border-[1px] border-solid border-[#E3E3E3] py-3 max-w-[26rem] rounded-[10px] min-w-[250px] h-[160px] flex flex-col flex-nowrap gap-2 "
+                      "carousel-card-container cursor-pointer  px-4 border-[1px] border-solid border-[#E3E3E3] py-3 max-w-[26rem] rounded-[10px] min-w-[250px] h-[160px] flex flex-col flex-nowrap gap-2 "
                     }
                   >
                     <div className="icon-container ">
