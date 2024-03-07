@@ -5,9 +5,9 @@ import { CryptoData } from "@/types/types";
 function OverviewBox({ crypto }: { crypto?: CryptoData }) {
   return (
     <>
-      <div className="overview-box cursor-default	 shadow-box w-full min-h-[max-content]  bg-white py-5 px-9 rounded-[10px]">
+      <div className="overview-box  cursor-default	 shadow-box w-full min-h-[max-content]  bg-white py-5 px-9 rounded-[10px]">
         <div className="overview-header flex items-center flex-nowrap">
-          <div className="coin-name-container flex flex-nowrap items-center gap-2">
+          <div className="coin-name-container flex flex-wrap items-center gap-2">
             <div className="icon icon-btc h-12 w-12 ">
               {crypto?.image.large ? <img src={crypto?.image.large} /> : <></>}
             </div>
@@ -28,16 +28,16 @@ function OverviewBox({ crypto }: { crypto?: CryptoData }) {
         </div>
         <div className="pricetag-container w-full flex flex-nowrap items-center mt-8">
           {crypto && (
-            <div className="price text-[27px] font-bold ">
+            <div className="price text-[20px] font-bold ">
               {crypto?.market_data.current_price["usd"].toLocaleString("en-US", {style:"currency", currency:"USD"})}
             </div>
           )}
-          <div className="price-meta flex gap-3 flex-nowrap items-center">
+          <div className="price-meta flex gap-[10px ] flex-nowrap overflow-hidden items-center">
             {crypto &&
               (crypto.market_data.price_change_percentage_24h > 0 ? (
                 <div className="price-change bg-[#737b91] min-w-[max-content] text-[16px] font-bold text-[#0FBA83] bg-[#EBF9F4] p-[6px] rounded-[6px] ms-8 flex flex-nowrap items-center justify-center gap-1">
                   <TiArrowSortedUp className="text-[20px]"></TiArrowSortedUp>
-                  {crypto.market_data.price_change_percentage_24h.toString()}%
+                  {crypto.market_data.price_change_percentage_24h.toFixed(2).toString()}%
                 </div>
               ) : (
                 <div className="price-change text-[#EB5B3C] bg-[#fee2e2] min-w-[max-content] text-[16px] font-bold p-[6px] rounded-[6px] ms-8 flex flex-nowrap items-center justify-center gap-1">
