@@ -3,10 +3,11 @@ import { Coin } from "@/types/types";
 import { useRouter } from "next/navigation";
 import React, { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
 function YouMayLikeBox() {
   const router = useRouter();
-  const { data: coins, isError, isLoading } = useFetchTrendingCoin();
+  const { data: coins } = useFetchTrendingCoin();
   const carouseloneRef = useRef<HTMLDivElement>(null);
   //   const showsRef = useRef<HTMLDivElement>(null);
   const scrollToDirectionCarouselOne = (direction: "left" | "right") => {
@@ -49,7 +50,7 @@ function YouMayLikeBox() {
   };
   return (
     <>
-      <div className="recomm-box   w-full bg-white  py-10 px-[4rem] flex flex-col">
+      <div className="recomm-box cursor-default w-full bg-white  py-10 px-[4rem] flex flex-col">
         <div className="fundamental-header text-[17px]  font-medium flex items-center gap-2">
           You May Also Like
         </div>
@@ -94,6 +95,24 @@ function YouMayLikeBox() {
                         <div className="coin-symbol text-[#768396] font-medium">
                           {coin.item.symbol.toLocaleUpperCase()}
                         </div>
+                        {coin &&
+                          (coin.item.data.price_change_percentage_24h['usd'] >
+                          0 ? (
+                            <div className="price-change min-w-[max-content] text-[13px] font-bold text-[#0FBA83] bg-[#EBF9F4] p-[2px] rounded-[6px] ms-8 flex flex-nowrap items-center justify-center gap-1">
+                              <TiArrowSortedUp className="text-[16px]"></TiArrowSortedUp>
+                              {coin.item.data.price_change_percentage_24h['usd'].toString().slice(0,6)}
+                              %
+                            </div>
+                          ) : (
+                            <div className="price-change text-[#EB5B3C] bg-[#fee2e2] min-w-[max-content] text-[13px] font-bold text-[#0FBA83] bg-[#EBF9F4] p-[2px] rounded-[6px] ms-8 flex flex-nowrap items-center justify-center gap-1">
+                              <TiArrowSortedDown className="text-[16px]"></TiArrowSortedDown>
+                              {coin.item.data.price_change_percentage_24h['usd']
+                                .toString()
+                                .slice(
+                                  1,7)}
+                              %
+                            </div>
+                          ))}
                       </div>
                     </div>
 
@@ -153,6 +172,24 @@ function YouMayLikeBox() {
                         <div className="coin-symbol text-[#768396] font-medium">
                           {coin.item.symbol.toLocaleUpperCase()}
                         </div>
+                        {coin &&
+                          (coin.item.data.price_change_percentage_24h['usd'] >
+                          0 ? (
+                            <div className="price-change text-[#0FBA83] bg-[#EBF9F4] min-w-[max-content] text-[13px] font-bold p-[2px] rounded-[6px] ms-8 flex flex-nowrap items-center justify-center gap-1">
+                              <TiArrowSortedUp className="text-[16px]"></TiArrowSortedUp>
+                              {coin.item.data.price_change_percentage_24h['usd'].toString().slice(0,6)}
+                              %
+                            </div>
+                          ) : (
+                            <div className="price-change text-[#EB5B3C] bg-[#fee2e2] min-w-[max-content] text-[13px] font-bold  p-[2px] rounded-[6px] ms-8 flex flex-nowrap items-center justify-center gap-1">
+                              <TiArrowSortedDown className="text-[16px]"></TiArrowSortedDown>
+                              {coin.item.data.price_change_percentage_24h['usd']
+                                .toString()
+                                .slice(
+                                  1,7)}
+                              %
+                            </div>
+                          ))}
                       </div>
                     </div>
 

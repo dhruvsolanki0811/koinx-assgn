@@ -13,15 +13,15 @@ function Navbar() {
   return (
     <>
       <div className="nav sticky top-0 z-[100] w-full max-[500px]:px-[0.8rem] ps-10 pe-10 bg-white flex justify-between items-center ">
-        <div className="relative logo-container w-[4rem] h-[4rem] ">
+        <div className="relative logo-container w-[4rem] cursor-pointer h-[4rem] ">
           <Image src={logo} alt="" fill></Image>
         </div>
         <div className="nav-items-container flex gap-4 font-bold text-[14px] max-sm:hidden">
-          <div className="nav-item flex items-center">Crypto Taxes</div>
-          <div className="nav-item flex items-center">Free Tools</div>
-          <div className="nav-item flex items-center">Resource Center</div>
-          <div className="nav-item flex items-center">
-            <div className="btn-container blue-box text-white p-[6px] rounded-[6px]">
+          <div className="nav-item flex items-center cursor-pointer">Crypto Taxes</div>
+          <div className="nav-item flex items-center cursor-pointer">Free Tools</div>
+          <div className="nav-item flex items-center cursor-pointer">Resource Center</div>
+          <div className="nav-item flex items-center cursor-pointer">
+            <div className="btn-container blue-box cursor-pointer text-white p-[6px] rounded-[6px]">
               Get Started
             </div>
           </div>
